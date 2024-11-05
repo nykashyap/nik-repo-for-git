@@ -6,14 +6,11 @@ pygame.init()
 screen = pygame.display.set_mode((600, 400))
 clock = pygame.time.Clock()
 
-# Colors and initial positions
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-ball_pos = [300, 200]
-ball_speed = [3, 3]
-paddle_pos = [270, 350]
-paddle_speed = 0
-
+"i have deleted some line"
+added some line
+ok
+done
+close
 # Main loop
 running = True
 while running:
