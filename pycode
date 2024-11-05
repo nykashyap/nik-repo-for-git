@@ -1,0 +1,49 @@
+import pygame
+
+pygame.init()
+
+# Set up display
+screen = pygame.display.set_mode((600, 400))
+clock = pygame.time.Clock()
+
+# Colors and initial positions
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+ball_pos = [300, 200]
+ball_speed = [3, 3]
+paddle_pos = [270, 350]
+paddle_speed = 0
+
+# Main loop
+running = True
+while running:
+    screen.fill((0, 0, 0))
+
+    # Paddle control
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]: paddle_speed = -5
+    elif keys[pygame.K_RIGHT]: paddle_speed = 5
+    else: paddle_speed = 0
+    paddle_pos[0] += paddle_speed
+
+    # Ball movement
+    ball_pos[0] += ball_speed[0]
+    ball_pos[1] += ball_speed[1]
+
+    # Ball collision with walls
+    if ball_pos[0] <= 0 or ball_pos[0] >= 580: ball_speed[0] *= -1
+    if ball_pos[1] <= 0: ball_speed[1] *= -1
+    if ball_pos[1] >= 380: running = False  # Game Over if ball falls down
+
+    # Ball collision with paddle
+    if paddle_pos[0] < ball_pos[0] < paddle_pos[0] + 60 and paddle_pos[1] < ball_pos[1] + 10 < paddle_pos[1] + 10:
+        ball_speed[1] *= -1
+
+    # Draw ball and paddle
+    pygame.draw.circle(screen, WHITE, ball_pos, 10)
+    pygame.draw.rect(screen, RED, (*paddle_pos, 60, 10))
+
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
