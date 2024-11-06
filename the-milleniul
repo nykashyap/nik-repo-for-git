@@ -6,7 +6,6 @@ def func(*proglang):
 
 
 print("1st function call")
-func("C","C++")   
 
 
 print("\n2st function call")
@@ -15,3 +14,6 @@ func("C","C++","java","python")
 
 print("\n3st function call")
 func("C","C++","kotlin","javascript")   
+
+def my_func():
+    pass
