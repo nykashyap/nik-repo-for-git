@@ -15,5 +15,9 @@ func("C","C++","java","python")
 print("\n3st function call")
 func("C","C++","kotlin","javascript")   
 
-def my_func():
-    pass
+def capitals(country,capital):
+    print("country:",country,">> capital:",capital)
+
+capitals("India","New Delhi")
+
+capitals("UsA","Washington DC")
