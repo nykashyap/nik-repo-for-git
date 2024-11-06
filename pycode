@@ -6,6 +6,8 @@ pygame.init()
 screen = pygame.display.set_mode((600, 400))
 clock = pygame.time.Clock()
 
+add more clock in current folders
+
 "i have deleted some line"
 added some line
 ok
