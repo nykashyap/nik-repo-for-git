@@ -4,7 +4,11 @@ pygame.init()
 
 # Set up display
 screen = pygame.display.set_mode((600, 400))
-clock = pygame.time.Clock()
+
+mew clock added
+ok thanks
+done
+close
 
 add more clock in current folders
 
